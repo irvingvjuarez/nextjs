@@ -22,7 +22,7 @@ const Home = () => {
 
       <div>
         {productList.map(product => (
-          <p>{ product.name }</p>
+          <p key={product.id}>{ product.name }</p>
         ))}
       </div>
     </React.Fragment>

@@ -1,9 +1,11 @@
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const ProductItem = () => {
+
   const [productList, setProductList] = useState([]);
   const router = useRouter();
+  let included;
 
   useEffect(() => {
     window
@@ -16,15 +18,18 @@ const ProductItem = () => {
 
 
   if(productList[0]){
-    let included = productList.find(item => item.id == router.query.id);
-    console.log(included)
+    included = productList.find(item => item.id == router.query.id);
   }
 
-  return (
+  return(
+    included ?
     <div>
       I am the product item: { router.query.id }
     </div>
+    :
+    <div>404 | No Found</div>
   )
+
 }
 
 export default ProductItem;
