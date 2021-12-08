@@ -7,10 +7,18 @@ const ProductItem = () => {
 
   useEffect(() => {
     window
-      .fetch("api/avos")
+      .fetch("../api/avos")
       .then(response => response.json())
-      .then(console.log)
+      .then( ({ data, length }) => {
+        setProductList(data)
+      } )
   }, [])
+
+
+  if(productList[0]){
+    let included = productList.find(item => item.id == router.query.id);
+    console.log(included)
+  }
 
   return (
     <div>
