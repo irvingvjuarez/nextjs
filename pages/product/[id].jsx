@@ -1,13 +1,22 @@
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const ProductItem = () => {
-    const router = useRouter();
+  const [productList, setProductList] = useState([]);
+  const router = useRouter();
 
-    return (
-        <div>
-            I am the product item: { router.query.id }
-        </div>
-    )
+  useEffect(() => {
+    window
+      .fetch("api/avos")
+      .then(response => response.json())
+      .then(console.log)
+  }, [])
+
+  return (
+    <div>
+      I am the product item: { router.query.id }
+    </div>
+  )
 }
 
 export default ProductItem;
