@@ -1,7 +1,9 @@
+import Navbar from "../components/navbar";
+
 const Home = () => (
     <div>
+        <Navbar />
         Hello World
-        <a href="/about">About</a>
     </div>
 )
 
