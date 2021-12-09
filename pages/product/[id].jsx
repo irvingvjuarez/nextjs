@@ -24,7 +24,8 @@ const ProductItem = () => {
   return(
     included ?
     <div>
-      I am the product item: { router.query.id }
+      <p>I am the avocado {included.name}</p>
+      <p>With the id {included.id}</p>
     </div>
     :
     <div>404 | No Found</div>

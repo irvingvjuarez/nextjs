@@ -16,7 +16,6 @@ const Home = () => {
   return(
     <React.Fragment>
       <div>
-        <Navbar />
         <h2>Hello World</h2>
       </div>
 
