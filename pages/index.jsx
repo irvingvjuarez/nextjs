@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Home = () => {
   const [productList, setProductList] = useState([]);
@@ -20,7 +21,11 @@ const Home = () => {
 
       <div>
         {productList.map(product => (
-          <p key={product.id}>{ product.name }</p>
+          <p key={product.id}>
+            <Link href={`./product/${product.id}`}>
+              <a>{ product.name }</a>
+            </Link>
+          </p>
         ))}
       </div>
     </React.Fragment>
